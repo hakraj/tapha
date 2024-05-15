@@ -7,6 +7,7 @@ import discord from './images/discord.png';
 import telegram from './images/Telegram_logo.svg.webp';
 import whatsapp from './images/whatsapp.webp';
 import coming from './images/coming-soon.png';
+import feature from './images/digital-marketing-vector-illustration4.jpg';
 
 
 
@@ -68,10 +69,10 @@ const Dropdown = ({ onClose }: { onClose: () => void }) => {
         </div>
         <div className=' absolute bottom-[5vh] w-full'>
           <div className='flex flex-col justify-center items-center gap-4' >
-            <button className=' bg-transparent border border-transparent hover:border-sky-400 rounded-lg py-1 px-2 text-sm text-gray-700 h-fit' > Login </button>
+            <button className=' bg-transparent border border-transparent hover:border-violet-400 rounded-lg py-1 px-2 text-sm text-gray-700 h-fit' > Login </button>
             <button className=' bg-gradient-to-tr from-sky-400 to-violet-500 hover:from-sky-300 hover:to-violet-400 rounded-lg py-1 px-2 text-sm text-white h-fit' > Sign up </button>
           </div>
-          <p className='text-xs text-center text-black font-mono mt-4'>&copy; tapha.inc {year}</p>
+          <p className='text-xs text-center text-black font-ubuntu font-light mt-4'>&copy; tapha.inc {year}</p>
         </div>
       </div>
     </div>
@@ -103,7 +104,7 @@ const NavBar = () => {
         <a href='#contact'> contact </a>
       </div>
       <div className='hidden md:flex items-center gap-4' >
-        <button className=' bg-transparent border border-transparent hover:border-sky-400 rounded-lg py-1 px-2 text-sm text-gray-700 h-fit' > Login </button>
+        <button className=' bg-transparent border border-transparent hover:border-violet-400 rounded-lg py-1 px-2 text-sm text-violet-400 h-fit' > Login </button>
         <button className=' bg-gradient-to-tr from-sky-400 to-violet-500 hover:from-sky-300 hover:to-violet-400 rounded-lg py-1 px-2 text-sm text-white h-fit' > Sign up </button>
       </div>
     </nav>
@@ -116,9 +117,9 @@ const Intro = () => {
       <NavBar />
       <div className='text-center pt-[15vw] pb-[75vw] md:pt-[12.5vw] md:pb-[33vw] px-[5vw]'>
         <h1 className=' font-ubuntu text-5xl md:text-6xl font-bold'>Build your Community</h1>
-        <p className=' md:text-xl font-normal my-4'>Easily manage paid groups across all social platforms </p>
+        <p className=' md:text-xl font-normal my-4 text-slate-700'>Easily manage paid groups across all social platforms </p>
         <button className='my-4 bg-gradient-to-tr from-sky-400 to-violet-500 hover:from-sky-300 hover:to-violet-400 rounded-lg py-2 px-4 text-white' > Get started </button>
-        <p className='font-mono text-sm'>Already have an account? <span className='text-sky-400 hover:underline'>Login</span></p>
+        <p className='font-ubuntu text-sm font-light'>Already have an account? <span className='text-sky-400 hover:underline'>Login</span></p>
         <div className=' absolute left-[10%] md:hidden w-4/5 mt-[10vw] rounded-[2.5rem] shadow-xl shadow-sky-400/50'>
           <img className='w-full h-auto' src={phone} alt='tapha user dashboard on mobile view' />
         </div>
@@ -155,13 +156,54 @@ const Intro = () => {
   )
 }
 
+const Features = () => {
+
+  const features = [
+    {
+      title: 'Seamless Payment Integration',
+      body: 'Tapha effortlessly integrates with payment gateways, streamlining subscription collection for hassle-free management.'
+    },
+    {
+      title: 'Automated Member Management',
+      body: 'Let Tapha handle member oversight for you. Automated removal of non-compliant members saves time for community growth.',
+    },
+    {
+      title: 'Effortless Subscription Tracking',
+      body: "Track subscriptions effortlessly with Tapha's intuitive dashboard, ensuring smooth membership management and informed decision-making.",
+    },
+    {
+      title: 'Compliance Automation',
+      body: "Ensure community compliance effortlessly. Tapha's automation feature enforces rules, fostering a safe environment without manual intervention.",
+    },
+  ]
+  return (
+    <div className='px-[10vw] pt-[20vw] md:pt-[12.5vw] grid gap-y-[3%] md:gap-y-[5%] gap-x-[10%] lg:gap-x-[12.5%] md:grid-cols-2'>
+      {features.map(({ title, body }) => {
+        return (
+          <div className=' bg-gradient-to-br via-sky-200 via-10% from-violet-300 to-15% to-neutral-50 rounded-xl p-4 lg:p-8 lg:pr-0 pr-0 drop-shadow-lg'>
+            <img src={feature} alt='feature 1' />
+            <h3 className=' font-ubuntu text-xl my-4 mr-4'>{title}</h3>
+            <p className=' text-sm text-slate-700 pr-4'>{body}</p>
+            <button className='my-4 bg-gradient-to-tr from-sky-400 to-violet-500 hover:from-sky-300 hover:to-violet-400 rounded-lg py-2 px-4 text-white' >
+              <span className='mr-1'>Read more</span>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 inline-block">
+                <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+              </svg>
+            </button>
+          </div>
+        )
+      })}
+    </div>
+  )
+}
+
 const Product = () => {
   return (
-    <>
-      <div id='product' className=' relative z-10 py-[25vw] md:py-[15vw] px-[5vw] bg-white flex flex-col lg:flex-row justify-between items-center'>
+    <div id='product'>
+      <div className=' relative z-10 py-[20vw] md:py-[12.5vw] px-[5vw] bg-white flex flex-col lg:flex-row justify-between items-center'>
         <div className=' max-lg:text-center lg:w-3/5'>
           <h1 className=' font-ubuntu text-3xl md:text-4xl font-bold'>Streamlining Paid Community <br />Management</h1>
-          <p className='my-4 md:my-6 md:w-3/4 max-lg:mx-auto lg:w-4/5 '>
+          <p className='my-4 md:my-6 md:w-3/4 max-lg:mx-auto lg:w-4/5 text-slate-700 '>
             Our platform offers seamless integration of payment collection,
             ensuring effortless tracking and management of member subscriptions.
             Admins can easily oversee paid memberships, automate the removal of
@@ -171,7 +213,7 @@ const Product = () => {
         <img className=' w-4/5 md:w-3/4 lg:w-1/3' src={intro} alt='tapha intro' />
       </div>
       <div>
-        <p className='font-mono max-md:text-sm text-center mb-4'>Our services cover</p>
+        <p className='font-ubuntu font-light max-md:text-sm text-center mb-4'>Our services cover</p>
         <div className=' relative flex items-center justify-between w-1/4 md:w-1/6 mx-auto'>
           <img className='w-1/4 grayscale' src={discord} alt='media' />
           <img className='w-1/4' src={telegram} alt='media' />
@@ -180,6 +222,43 @@ const Product = () => {
           <img className='w-[12.5%] absolute top-[-2.5%] right-[-5%]' src={coming} alt='media' />
         </div>
       </div>
+      <Features />
+    </div>
+  )
+}
+
+const Blog = () => {
+  return (
+    <div className=' px-[5vw] py-[20vw] md:py-[12.5vw] flex flex-col lg:flex-row justify-between items-center'>
+      <img className=' w-4/5 md:w-3/4 lg:w-1/3' src={intro} alt='tapha intro' />
+      <div className=' max-lg:text-center text-right lg:w-3/5'>
+        <h1 className=' font-ubuntu text-3xl md:text-4xl font-bold'>Stay Informed with Tapha's Insights</h1>
+        <p className='my-4 md:my-6 md:w-3/4 max-lg:mx-auto ml-auto  text-slate-700 '>
+          Dig into Community Management Strategies! Discover expert insights,
+          industry tips, and the latest service updates on our blog.
+        </p>
+        <button className='my-4 bg-gradient-to-tr from-sky-400 to-violet-500 hover:from-sky-300 hover:to-violet-400 rounded-lg py-2 px-4 text-white' >
+          Read our blog
+        </button>
+      </div>
+    </div>
+
+  )
+}
+
+const CTA = () => {
+  return (
+    <>
+      <Blog />
+      <div className=' text-center px-[5vw] py-[15vw] md:py-[10vw]'>
+        <h1 className=' font-ubuntu text-5xl md:text-6xl font-bold'>Start Your Journey Today</h1>
+        <p className=' md:text-xl font-normal my-4 text-slate-700'>subscribe to get started and revolutionize your community management.</p>
+        <div className='flex items-center gap-4 justify-center' >
+          <button className=' bg-transparent border border-transparent hover:border-violet-400 rounded-lg py-2 px-4 text-sm text-violet-400 h-fit' > Login </button>
+          <button className=' bg-gradient-to-tr from-sky-400 to-violet-500 hover:from-sky-300 hover:to-violet-400 rounded-lg py-2 px-4 text-sm text-white h-fit' > Sign up </button>
+        </div>
+
+      </div>
     </>
   )
 }
@@ -187,9 +266,10 @@ const Product = () => {
 
 const Home = () => {
   return (
-    <main>
+    <main className=' max-2xl:max-w-[1536px] mx-auto'>
       <Intro />
       <Product />
+      <CTA />
     </main>
   )
 }
