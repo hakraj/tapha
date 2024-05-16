@@ -70,8 +70,8 @@ const Dropdown = ({ onClose }: { onClose: () => void }) => {
         </div>
         <div className=' absolute bottom-[5vh] w-full'>
           <div className='flex flex-col justify-center items-center gap-4' >
-            <button className=' bg-transparent border border-transparent hover:border-violet-400 rounded-lg py-1 px-2 text-sm text-violet-400 h-fit' > Login </button>
-            <button className=' bg-gradient-to-tr from-sky-400 to-violet-500 hover:from-sky-300 hover:to-violet-400 rounded-lg py-1 px-2 text-sm text-white h-fit' > Sign up </button>
+            <button className=' font-ubuntu bg-transparent border border-transparent hover:border-violet-400 rounded-lg py-1 px-2 text-sm text-violet-400 h-fit' > Login </button>
+            <button className=' font-ubuntu bg-gradient-to-tr from-sky-400 to-violet-500 hover:from-sky-300 hover:to-violet-400 rounded-lg py-1 px-2 text-sm text-white h-fit' > Sign up </button>
           </div>
           <p className='text-xs text-center text-black font-ubuntu font-light mt-4'>&copy; tapha.inc {year}</p>
         </div>
@@ -105,8 +105,8 @@ const NavBar = () => {
         <a href='#contact'> contact </a>
       </div>
       <div className='hidden md:flex items-center gap-4' >
-        <button className=' bg-transparent border border-transparent hover:border-violet-400 rounded-lg py-2 px-4 text-sm text-violet-400 h-fit' > Login </button>
-        <button className=' bg-gradient-to-tr from-sky-400 to-violet-500 hover:from-sky-300 hover:to-violet-400 rounded-lg py-2 px-4 text-sm text-white h-fit' > Sign up </button>
+        <button className=' font-ubuntu bg-transparent border border-transparent hover:border-violet-400 rounded-lg py-2 px-4 text-sm text-violet-400 h-fit' > Login </button>
+        <button className=' font-ubuntu bg-gradient-to-tr from-sky-400 to-violet-500 hover:from-sky-300 hover:to-violet-400 rounded-lg py-2 px-4 text-sm text-white h-fit' > Sign up </button>
       </div>
     </nav>
   )
@@ -119,12 +119,12 @@ const Intro = () => {
       <div className='text-center pt-[10vh] pb-[75vw] md:pt-[12.5vw] md:pb-[33vw] px-[5vw]'>
         <h1 className=' font-ubuntu text-5xl md:text-6xl font-bold'>Build your Community</h1>
         <p className=' md:text-xl font-normal my-4 text-slate-700'>Easily manage paid groups across all social platforms </p>
-        <button className='my-4 bg-gradient-to-tr from-sky-400 to-violet-500 hover:from-sky-300 hover:to-violet-400 rounded-lg py-2 px-4 text-white' > Get started </button>
+        <button className=' font-ubuntu my-4 bg-gradient-to-tr from-sky-400 to-violet-500 hover:from-sky-300 hover:to-violet-400 rounded-lg py-2 px-4 text-white' > Get started </button>
         <p className='font-ubuntu text-sm font-light'>Already have an account? <span className='text-sky-400 hover:underline'>Login</span></p>
-        <div className=' absolute left-[10%] md:hidden w-4/5 mt-[10vw] rounded-[2.5rem] shadow-xl shadow-sky-400/50'>
-          <img className='w-full h-auto' src={phone} alt='tapha user dashboard on mobile view' />
+        <div className=' absolute left-[10%] md:hidden w-4/5 mt-[10vw] p-2 bg-slate-300 rounded-[2.5rem] shadow-xl shadow-sky-400/50'>
+          <img className='w-full h-auto rounded-[2.5rem]' src={phone} alt='tapha user dashboard on mobile view' />
         </div>
-        <div className=' absolute left-[10%] hidden md:block w-4/5 mt-[10vw] p-1 bg-slate-300 rounded-2xl shadow-xl shadow-sky-400/50'>
+        <div className=' absolute left-[10%] hidden md:block w-4/5 lg:w-3/4 mt-[10vw] p-1 bg-slate-300 rounded-2xl shadow-xl shadow-sky-400/50'>
           <img className='w-full h-auto rounded-2xl' src={laptop} alt='tapha user dashboard on desktop view' />
         </div>
         <div className='f-icons'>
@@ -214,7 +214,7 @@ const Features = () => {
             <img className=' max-w-full h-auto' src={feature} alt='feature 1' />
             <h3 className=' font-ubuntu text-xl my-4 mr-4'>{title}</h3>
             <p className=' text-sm text-slate-700 pr-4'>{body}</p>
-            <button className=' my-4 bg-gradient-to-tr from-sky-400 to-violet-500 hover:from-sky-300 hover:to-violet-400 rounded-lg py-2 px-4 text-white' >
+            <button className=' font-ubuntu my-4 bg-gradient-to-tr from-sky-400 to-violet-500 hover:from-sky-300 hover:to-violet-400 rounded-lg py-2 px-4 text-white' >
               <span className='mr-1'>Read more</span>
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5 inline-block">
                 <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
@@ -237,7 +237,7 @@ const Blog = () => {
           Dig into Community Management Strategies! Discover expert insights,
           industry tips, and the latest service updates on our blog.
         </p>
-        <button className='my-4 border border-b-sky-400 border-l-sky-400 border-r-violet-500 border-t-violet-500 text-violet-400 rounded-lg bg-gradient-to-tr hover:from-sky-300 hover:to-violet-400 hover:border-transparent hover:text-white py-2 px-4' >
+        <button className=' font-ubuntu my-4 border border-b-sky-400 border-l-sky-400 border-r-violet-500 border-t-violet-500 text-violet-400 rounded-lg bg-gradient-to-tr hover:from-sky-300 hover:to-violet-400 hover:border-transparent hover:text-white py-2 px-4' >
           Check our blog
         </button>
       </div>
@@ -252,8 +252,8 @@ const CTA = () => {
       <h1 className=' font-ubuntu text-4xl md:text-5xl font-bold'>Start Your Journey Today</h1>
       <p className=' md:text-xl font-normal my-4 text-slate-700'>subscribe to get started and revolutionize your community management.</p>
       <div className='flex items-center gap-4 justify-center' >
-        <button className=' bg-transparent border border-transparent hover:border-violet-400 rounded-lg py-2 px-4 text-violet-400 h-fit' > Login </button>
-        <button className=' bg-gradient-to-tr from-sky-400 to-violet-500 hover:from-sky-300 hover:to-violet-400 rounded-lg py-2 px-4 text-white h-fit' > Sign up </button>
+        <button className=' font-ubuntu bg-transparent border border-transparent hover:border-violet-400 rounded-lg py-2 px-4 text-violet-400 h-fit' > Login </button>
+        <button className=' font-ubuntu bg-gradient-to-tr from-sky-400 to-violet-500 hover:from-sky-300 hover:to-violet-400 rounded-lg py-2 px-4 text-white h-fit' > Sign up </button>
       </div>
 
     </div>
