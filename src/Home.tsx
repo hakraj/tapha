@@ -8,6 +8,7 @@ import telegram from './images/Telegram_logo.svg.webp';
 import whatsapp from './images/whatsapp.webp';
 import coming from './images/coming-soon.png';
 import feature from './images/digital-marketing-vector-illustration4.jpg';
+import blog from './images/blog.webp'
 
 
 
@@ -69,7 +70,7 @@ const Dropdown = ({ onClose }: { onClose: () => void }) => {
         </div>
         <div className=' absolute bottom-[5vh] w-full'>
           <div className='flex flex-col justify-center items-center gap-4' >
-            <button className=' bg-transparent border border-transparent hover:border-violet-400 rounded-lg py-1 px-2 text-sm text-gray-700 h-fit' > Login </button>
+            <button className=' bg-transparent border border-transparent hover:border-violet-400 rounded-lg py-1 px-2 text-sm text-violet-400 h-fit' > Login </button>
             <button className=' bg-gradient-to-tr from-sky-400 to-violet-500 hover:from-sky-300 hover:to-violet-400 rounded-lg py-1 px-2 text-sm text-white h-fit' > Sign up </button>
           </div>
           <p className='text-xs text-center text-black font-ubuntu font-light mt-4'>&copy; tapha.inc {year}</p>
@@ -104,8 +105,8 @@ const NavBar = () => {
         <a href='#contact'> contact </a>
       </div>
       <div className='hidden md:flex items-center gap-4' >
-        <button className=' bg-transparent border border-transparent hover:border-violet-400 rounded-lg py-1 px-2 text-sm text-violet-400 h-fit' > Login </button>
-        <button className=' bg-gradient-to-tr from-sky-400 to-violet-500 hover:from-sky-300 hover:to-violet-400 rounded-lg py-1 px-2 text-sm text-white h-fit' > Sign up </button>
+        <button className=' bg-transparent border border-transparent hover:border-violet-400 rounded-lg py-2 px-4 text-sm text-violet-400 h-fit' > Login </button>
+        <button className=' bg-gradient-to-tr from-sky-400 to-violet-500 hover:from-sky-300 hover:to-violet-400 rounded-lg py-2 px-4 text-sm text-white h-fit' > Sign up </button>
       </div>
     </nav>
   )
@@ -115,7 +116,7 @@ const Intro = () => {
   return (
     <div className=' bg-gradient-to-br via-sky-200 via-10% from-violet-300 to-15% to-neutral-50 '>
       <NavBar />
-      <div className='text-center pt-[15vw] pb-[75vw] md:pt-[12.5vw] md:pb-[33vw] px-[5vw]'>
+      <div className='text-center pt-[10vh] pb-[75vw] md:pt-[12.5vw] md:pb-[33vw] px-[5vw]'>
         <h1 className=' font-ubuntu text-5xl md:text-6xl font-bold'>Build your Community</h1>
         <p className=' md:text-xl font-normal my-4 text-slate-700'>Easily manage paid groups across all social platforms </p>
         <button className='my-4 bg-gradient-to-tr from-sky-400 to-violet-500 hover:from-sky-300 hover:to-violet-400 rounded-lg py-2 px-4 text-white' > Get started </button>
@@ -156,6 +157,35 @@ const Intro = () => {
   )
 }
 
+const Product = () => {
+  return (
+    <>
+      <div id='product' className='relative z-10 py-[15vh] px-[5vw] bg-white flex flex-col lg:flex-row justify-between items-center'>
+        <div className=' max-lg:text-center lg:w-3/5'>
+          <h1 className=' font-ubuntu text-3xl md:text-4xl font-bold'>Streamlining Paid Community <br />Management</h1>
+          <p className='my-4 md:my-6 md:w-3/4 max-lg:mx-auto lg:w-4/5 text-slate-700 '>
+            Our platform offers seamless integration of payment collection,
+            ensuring effortless tracking and management of member subscriptions.
+            Admins can easily oversee paid memberships, automate the removal of
+            non-compliant members, and focus on growing their communities.
+          </p>
+        </div>
+        <img className='w-3/4 md:w-3/5 lg:w-1/3' src={intro} alt='tapha intro' />
+      </div>
+      <div>
+        <p className='font-ubuntu font-light max-md:text-sm text-center mb-4'>Our services cover</p>
+        <div className=' relative flex items-center justify-between w-1/3 md:w-1/4 mx-auto'>
+          <img className='w-1/4 grayscale' src={discord} alt='media' />
+          <img className='w-1/4' src={telegram} alt='media' />
+          <img className='w-1/4 grayscale' src={whatsapp} alt='media' />
+          <img className='w-[12.5%] absolute top-0 left-[18%]' src={coming} alt='media' />
+          <img className='w-[12.5%] absolute top-[-2.5%] right-[-5%]' src={coming} alt='media' />
+        </div>
+      </div>
+    </>
+  )
+}
+
 const Features = () => {
 
   const features = [
@@ -177,16 +207,16 @@ const Features = () => {
     },
   ]
   return (
-    <div className='px-[10vw] pt-[20vw] md:pt-[12.5vw] grid gap-y-[3%] md:gap-y-[5%] gap-x-[10%] lg:gap-x-[12.5%] md:grid-cols-2'>
+    <div className='px-[10vw] lg:px-[5vw] pt-[15vh] pb-[5vh] grid gap-y-[3%] md:gap-y-[5%] gap-x-[10%] lg:gap-x-[5%] grid-rows-4 md:grid-rows-2 xl:grid-rows-1 md:grid-cols-2 xl:grid-cols-4'>
       {features.map(({ title, body }) => {
         return (
-          <div className=' bg-gradient-to-br via-sky-200 via-10% from-violet-300 to-15% to-neutral-50 rounded-xl p-4 lg:p-8 lg:pr-0 pr-0 drop-shadow-lg'>
-            <img src={feature} alt='feature 1' />
+          <div className=' bg-gradient-to-br via-sky-200 via-10% from-violet-300 to-15% to-neutral-50 rounded-2xl p-4 lg:p-6 lg:pr-0 pr-0 drop-shadow-lg'>
+            <img className=' max-w-full h-auto' src={feature} alt='feature 1' />
             <h3 className=' font-ubuntu text-xl my-4 mr-4'>{title}</h3>
             <p className=' text-sm text-slate-700 pr-4'>{body}</p>
-            <button className='my-4 bg-gradient-to-tr from-sky-400 to-violet-500 hover:from-sky-300 hover:to-violet-400 rounded-lg py-2 px-4 text-white' >
+            <button className=' my-4 bg-gradient-to-tr from-sky-400 to-violet-500 hover:from-sky-300 hover:to-violet-400 rounded-lg py-2 px-4 text-white' >
               <span className='mr-1'>Read more</span>
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 inline-block">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5 inline-block">
                 <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
               </svg>
             </button>
@@ -197,48 +227,18 @@ const Features = () => {
   )
 }
 
-const Product = () => {
-  return (
-    <div id='product'>
-      <div className=' relative z-10 py-[20vw] md:py-[12.5vw] px-[5vw] bg-white flex flex-col lg:flex-row justify-between items-center'>
-        <div className=' max-lg:text-center lg:w-3/5'>
-          <h1 className=' font-ubuntu text-3xl md:text-4xl font-bold'>Streamlining Paid Community <br />Management</h1>
-          <p className='my-4 md:my-6 md:w-3/4 max-lg:mx-auto lg:w-4/5 text-slate-700 '>
-            Our platform offers seamless integration of payment collection,
-            ensuring effortless tracking and management of member subscriptions.
-            Admins can easily oversee paid memberships, automate the removal of
-            non-compliant members, and focus on growing their communities.
-          </p>
-        </div>
-        <img className=' w-4/5 md:w-3/4 lg:w-1/3' src={intro} alt='tapha intro' />
-      </div>
-      <div>
-        <p className='font-ubuntu font-light max-md:text-sm text-center mb-4'>Our services cover</p>
-        <div className=' relative flex items-center justify-between w-1/4 md:w-1/6 mx-auto'>
-          <img className='w-1/4 grayscale' src={discord} alt='media' />
-          <img className='w-1/4' src={telegram} alt='media' />
-          <img className='w-1/4 grayscale' src={whatsapp} alt='media' />
-          <img className='w-[12.5%] absolute top-0 left-[18%]' src={coming} alt='media' />
-          <img className='w-[12.5%] absolute top-[-2.5%] right-[-5%]' src={coming} alt='media' />
-        </div>
-      </div>
-      <Features />
-    </div>
-  )
-}
-
 const Blog = () => {
   return (
-    <div className=' px-[5vw] py-[20vw] md:py-[12.5vw] flex flex-col lg:flex-row justify-between items-center'>
-      <img className=' w-4/5 md:w-3/4 lg:w-1/3' src={intro} alt='tapha intro' />
+    <div className=' px-[5vw] py-[15vh] flex flex-col lg:flex-row justify-between items-center'>
+      <img className='w-2/3 md:w-1/2 lg:w-1/4' src={blog} alt='tapha intro' />
       <div className=' max-lg:text-center text-right lg:w-3/5'>
         <h1 className=' font-ubuntu text-3xl md:text-4xl font-bold'>Stay Informed with Tapha's Insights</h1>
         <p className='my-4 md:my-6 md:w-3/4 max-lg:mx-auto ml-auto  text-slate-700 '>
           Dig into Community Management Strategies! Discover expert insights,
           industry tips, and the latest service updates on our blog.
         </p>
-        <button className='my-4 bg-gradient-to-tr from-sky-400 to-violet-500 hover:from-sky-300 hover:to-violet-400 rounded-lg py-2 px-4 text-white' >
-          Read our blog
+        <button className='my-4 border border-b-sky-400 border-l-sky-400 border-r-violet-500 border-t-violet-500 text-violet-400 rounded-lg bg-gradient-to-tr hover:from-sky-300 hover:to-violet-400 hover:border-transparent hover:text-white py-2 px-4' >
+          Check our blog
         </button>
       </div>
     </div>
@@ -248,29 +248,53 @@ const Blog = () => {
 
 const CTA = () => {
   return (
-    <>
-      <Blog />
-      <div className=' text-center px-[5vw] py-[15vw] md:py-[10vw]'>
-        <h1 className=' font-ubuntu text-5xl md:text-6xl font-bold'>Start Your Journey Today</h1>
-        <p className=' md:text-xl font-normal my-4 text-slate-700'>subscribe to get started and revolutionize your community management.</p>
-        <div className='flex items-center gap-4 justify-center' >
-          <button className=' bg-transparent border border-transparent hover:border-violet-400 rounded-lg py-2 px-4 text-sm text-violet-400 h-fit' > Login </button>
-          <button className=' bg-gradient-to-tr from-sky-400 to-violet-500 hover:from-sky-300 hover:to-violet-400 rounded-lg py-2 px-4 text-sm text-white h-fit' > Sign up </button>
-        </div>
-
+    <div className=' text-center px-[10vw] pt-[10vh] pb-[25vh]'>
+      <h1 className=' font-ubuntu text-4xl md:text-5xl font-bold'>Start Your Journey Today</h1>
+      <p className=' md:text-xl font-normal my-4 text-slate-700'>subscribe to get started and revolutionize your community management.</p>
+      <div className='flex items-center gap-4 justify-center' >
+        <button className=' bg-transparent border border-transparent hover:border-violet-400 rounded-lg py-2 px-4 text-violet-400 h-fit' > Login </button>
+        <button className=' bg-gradient-to-tr from-sky-400 to-violet-500 hover:from-sky-300 hover:to-violet-400 rounded-lg py-2 px-4 text-white h-fit' > Sign up </button>
       </div>
-    </>
+
+    </div>
   )
 }
 
+const Footer = () => {
+  return (
+    <footer className='px-[10vw] py-[5vh]  bg-gradient-to-tl from-violet-700 via-sky-800 via-10% to-15% to-neutral-700 text-neutral-50 text-center'>
+      <div>
+        <p className='logo text-2xl font-bold font-mono'> tapha </p>
+        < div className='flex max-md:flex-col items-center justify-center gap-4 my-6 md:my-8 mx-auto font-light' >
+          <a href='#product'>product </a>
+          <a href='/blog'> blog </a>
+          <a href='/about'> about </a>
+          <a href='#contact'> contact </a>
+        </div>
+        <div className=' flex items-center justify-between w-1/3 md:w-40 my-6 md:my-8 mx-auto'>
+          <img className='w-1/4 ' src={discord} alt='media' />
+          <img className='w-1/4' src={telegram} alt='media' />
+          <img className='w-1/4 ' src={whatsapp} alt='media' />
+        </div>
+
+        <p className='text-xs font-ubuntu font-light mt-4'>copyright &copy;{year}. All right reserved. Tapha inc.</p>
+      </div>
+    </footer>
+  )
+}
 
 const Home = () => {
   return (
-    <main className=' max-2xl:max-w-[1536px] mx-auto'>
-      <Intro />
-      <Product />
-      <CTA />
-    </main>
+    <>
+      <main className=' max-2xl:max-w-[1536px] mx-auto'>
+        <Intro />
+        <Product />
+        <Features />
+        <Blog />
+        <CTA />
+      </main>
+      <Footer />
+    </>
   )
 }
 
