@@ -1,22 +1,22 @@
 import React, { useEffect, useRef } from 'react';
 import { useState } from 'react';
-import phone from './images/phone.png';
-import laptop from './images/laptop.png';
-import intro from './images/marketing-consulting-concept-illustration_114360-9027.avif';
-import comingSoon from './images/Coming-Soon-Transparent.png';
-import blog from './images/blog.webp';
+import phone from '../images/phone.png';
+import laptop from '../images/laptop.png';
+import intro from '../images/marketing-consulting-concept-illustration_114360-9027.avif';
+import comingSoon from '../images/Coming-Soon-Transparent.png';
+import blog from '../images/blog.webp';
 // features images
-import f1 from './images/features/Seamless Payment Integration.jpg';
-import f2 from './images/features/Automated Member Management.jpg';
-import f3 from './images/features/Effortless Subscription Tracking.jpg';
-import f4 from './images/features/Compliance Automation.jpg';
+import f1 from '../images/features/Seamless Payment Integration.jpg';
+import f2 from '../images/features/Automated Member Management.jpg';
+import f3 from '../images/features/Effortless Subscription Tracking.jpg';
+import f4 from '../images/features/Compliance Automation.jpg';
 // socials images; attribute to freepik from flaticon
-import discord from './images/socials/discord.png';
-import telegram from './images/socials/telegram.png';
-import whatsapp from './images/socials/whatsapp.png';
-import linkedin from './images/socials/linkedin.png'
-import facebook from './images/socials/facebook.png'
-import x from './images/socials/twitter.png'
+import discord from '../images/socials/discord.png';
+import telegram from '../images/socials/telegram.png';
+import whatsapp from '../images/socials/whatsapp.png';
+import linkedin from '../images/socials/linkedin.png'
+import facebook from '../images/socials/facebook.png'
+import x from '../images/socials/twitter.png'
 
 
 const year = new Date().getFullYear();
@@ -49,7 +49,7 @@ const Dropdown = ({ onClose }: { onClose: () => void }) => {
               <p className='font-light max-[320px]:text-sm'>home</p>
             </div>
           </a>
-          <a onClick={() => onClose()} href='#product'>
+          <a onClick={() => onClose()} href='/#product'>
             <div className="flex items-center gap-8 my-8 max-[320px]:my-4">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 max-[320px]:w-5 max-[320px]:h-5">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z" />
@@ -57,7 +57,7 @@ const Dropdown = ({ onClose }: { onClose: () => void }) => {
               <p className='font-light max-[320px]:text-sm'>product</p>
             </div>
           </a>
-          <a onClick={() => onClose()} href='#features'>
+          <a onClick={() => onClose()} href='/#features'>
             <div className="flex items-center gap-8 my-8 max-[320px]:my-4">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 max-[320px]:w-5 max-[320px]:h-5">
                 <path strokeLinecap="round" strokeLinejoin="round" d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
@@ -94,7 +94,7 @@ const Dropdown = ({ onClose }: { onClose: () => void }) => {
   )
 }
 
-const NavBar = () => {
+export const NavBar = () => {
   const [isDropdown, setIsDropdown] = useState(false);
 
   return (
@@ -109,8 +109,8 @@ const NavBar = () => {
         </svg>
       </div>
       < div className='hidden md:flex items-center gap-4 font-light' >
-        <a href='#product'>product </a>
-        <a href='#features'> features </a>
+        <a href='/#product'>product </a>
+        <a href='/#features'> features </a>
         <a href='/blog'> blog </a>
         <a href='#contact'> contact </a>
       </div>
@@ -126,11 +126,11 @@ const Intro = () => {
   return (
     <div className=' bg-gradient-to-br via-sky-200 via-10% from-violet-300 to-15% to-neutral-50 '>
       <NavBar />
-      <div className='text-center pt-[10vh] pb-[75vw] md:pt-[12.5vw] md:pb-[33vw] px-[5vw]'>
+      <div className='relative text-center pt-[10vh] pb-[75vw] md:pt-[12.5vw] md:pb-[33vw] px-[5vw]'>
         <h1 className=' font-ubuntu text-5xl md:text-6xl font-bold'>Build your Community</h1>
         <p className=' md:text-xl font-normal my-4 text-slate-700'>Easily manage paid groups across all social platforms </p>
         <button className=' font-ubuntu my-4 bg-gradient-to-tr from-sky-400 to-violet-500 hover:from-sky-300 hover:to-violet-400 rounded-lg py-2 px-4 text-white' > Get started </button>
-        <p className='font-ubuntu text-sm font-light'>Already have an account? <span className='text-sky-400 hover:underline'>Login</span></p>
+        <p className='font-ubuntu text-sm font-light'>Already have an account? <span className='text-sky-400 hover:underline cursor-pointer'>Login</span></p>
         <div className=' absolute left-[10%] lg:left-[12.5%] w-4/5 lg:w-3/4 mt-[10vw] p-2 md:p-1 bg-slate-300 rounded-[2.5rem] md:rounded-2xl shadow-xl shadow-sky-400/50'>
           <img fetchPriority='high' className='w-full h-auto rounded-[2.5rem] md:hidden' src={phone} alt='tapha user dashboard on mobile view' />
           <img fetchPriority='high' className='w-full h-auto rounded-2xl hidden md:block' src={laptop} alt='tapha user dashboard on desktop view' />
@@ -178,16 +178,16 @@ const Product = () => {
             non-compliant members, and focus on growing their communities.
           </p>
         </div>
-        <img className='w-3/4 md:w-3/5 lg:w-1/3' src={intro} alt='tapha intro' />
+        <img loading='lazy' className='w-3/4 md:w-3/5 lg:w-1/3' src={intro} alt='tapha intro' />
       </div>
-      <div>
-        <p className='font-ubuntu font-light max-md:text-sm text-center mb-4'>Our services cover</p>
-        <div className=' relative flex items-center justify-between w-1/2 md:w-1/4 mx-auto'>
+      <div className='relative z-10 bg-white'>
+        <p className='font-ubuntu font-light text-center mb-4'>Our services cover</p>
+        <div className=' relative flex items-center justify-between w-3/4 md:w-2/3 lg:w-1/3 mx-auto'>
           <img className='w-1/4' src={discord} alt='media' />
           <img className='w-1/4' src={telegram} alt='media' />
           <img className='w-1/4' src={whatsapp} alt='media' />
-          <img className='w-[12.5%] absolute top-0 left-[12.5%]' src={comingSoon} alt='media' />
-          <img className='w-[12.5%] absolute top-[-2%] right-[-1%]' src={comingSoon} alt='media' />
+          <img className='w-[25%] absolute top-[-3%] left-[5%]' src={comingSoon} alt='media' />
+          <img className='w-[25%] absolute top-[-5%] right-[-3%]' src={comingSoon} alt='media' />
         </div>
       </div>
     </>
@@ -219,11 +219,11 @@ const Features = () => {
     },
   ]
   return (
-    <div id='features' className='px-[10vw] xl:px-[5vw] pt-[15vh] pb-[5vh] grid gap-y-[3%] md:gap-y-[5%] gap-x-[10%] xl:gap-x-[5%] md:grid-cols-2 xl:grid-cols-4'>
-      {features.map(({ img, title, body }) => {
+    <div id='features' className='relative z-10 bg-white px-[10vw] xl:px-[5vw] pt-[15vh] pb-[5vh] grid gap-y-[3%] md:gap-y-[5%] gap-x-[10%] xl:gap-x-[5%] md:grid-cols-2 xl:grid-cols-4'>
+      {features.map(({ img, title, body }, i) => {
         return (
-          <div className=' bg-gradient-to-br via-sky-200 via-10% from-violet-300 to-15% to-neutral-50 rounded-2xl p-4 lg:p-6 lg:pr-0 pr-0 drop-shadow-lg'>
-            <img className=' max-w-full h-auto rounded-l-2xl ' src={img} alt='feature 1' />
+          <div key={i} className=' bg-gradient-to-br via-sky-200 via-10% from-violet-300 to-15% to-neutral-50 rounded-2xl p-4 lg:p-6 lg:pr-0 pr-0 drop-shadow-lg'>
+            <img loading='lazy' className=' max-w-full h-auto rounded-l-2xl ' src={img} alt='feature 1' />
             <h3 className=' font-ubuntu text-xl my-4 mr-4'>{title}</h3>
             <p className=' text-sm text-slate-700 pr-4'>{body}</p>
             <button className=' font-ubuntu my-4 bg-gradient-to-tr from-sky-400 to-violet-500 hover:from-sky-300 hover:to-violet-400 rounded-lg py-2 px-4 text-white' >
@@ -242,7 +242,7 @@ const Features = () => {
 const Blog = () => {
   return (
     <div className=' px-[5vw] py-[15vh] max-md:pt-[35vh] max-[320px]:pt-[50vh] flex flex-col lg:flex-row justify-between items-center'>
-      <img className='w-2/3 md:w-1/2 lg:w-1/4' src={blog} alt='tapha intro' />
+      <img loading='lazy' className='w-2/3 md:w-1/2 lg:w-1/4' src={blog} alt='tapha intro' />
       <div className=' max-lg:text-center text-right lg:w-3/5'>
         <h1 className=' font-ubuntu text-3xl md:text-4xl font-bold'>Stay Informed with Tapha's Insights</h1>
         <p className='my-4 md:my-6 md:w-3/4 max-lg:mx-auto ml-auto  text-slate-700 '>
@@ -271,14 +271,14 @@ const CTA = () => {
   )
 }
 
-const Footer = () => {
+export const Footer = () => {
   return (
     <footer id='contact' className='px-[10vw] py-[5vh] bg-gradient-to-tl from-violet-700 via-sky-800 via-10% to-15% to-neutral-900 text-neutral-50 text-center'>
       <div>
         <p className='logo text-2xl font-bold font-mono'> tapha </p>
         < div className='flex max-md:flex-col items-center justify-center gap-4 my-6 md:my-8 mx-auto font-light' >
-          <a href='#product'>product </a>
-          <a href='#features'> features </a>
+          <a href='/#product'>product </a>
+          <a href='/#features'> features </a>
           <a href='/blog'> blog </a>
           <a href='#contact'> contact </a>
         </div>
@@ -297,7 +297,7 @@ const Footer = () => {
 const Home = () => {
   return (
     <>
-      <main className=' max-2xl:max-w-[1536px] mx-auto'>
+      <main className=' max-w-screen-2xl mx-auto'>
         <Intro />
         <Product />
         <Features />
