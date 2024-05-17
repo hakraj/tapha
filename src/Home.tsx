@@ -33,8 +33,8 @@ const Dropdown = ({ onClose }: { onClose: () => void }) => {
     document.addEventListener("mousedown", clickOutside);
   }, [ref, onClose])
   return (
-    <div className=" fixed top-0 right-0 z-50 h-screen w-screen bg-black/50" >
-      <div ref={ref} className=" absolute top-0 right-0 w-2/3 h-full bg-white ">
+    <div className=" fixed flex justify-end top-0 right-0 z-50 h-screen w-screen bg-black/50" >
+      <div ref={ref} className="relative w-2/3 h-full bg-white ">
         <div className=" flex justify-end py-4 px-[5vw]">
           <svg onClick={onClose} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-7 h-7">
             <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
@@ -182,7 +182,7 @@ const Product = () => {
       </div>
       <div>
         <p className='font-ubuntu font-light max-md:text-sm text-center mb-4'>Our services cover</p>
-        <div className=' relative flex items-center justify-between w-1/3 md:w-1/4 mx-auto'>
+        <div className=' relative flex items-center justify-between w-1/2 md:w-1/4 mx-auto'>
           <img className='w-1/4' src={discord} alt='media' />
           <img className='w-1/4' src={telegram} alt='media' />
           <img className='w-1/4' src={whatsapp} alt='media' />
@@ -241,7 +241,7 @@ const Features = () => {
 
 const Blog = () => {
   return (
-    <div className=' px-[5vw] py-[15vh] max-md:pt-[30vh] max-[320px]:pt-[50vh] flex flex-col lg:flex-row justify-between items-center'>
+    <div className=' px-[5vw] py-[15vh] max-md:pt-[35vh] max-[320px]:pt-[50vh] flex flex-col lg:flex-row justify-between items-center'>
       <img className='w-2/3 md:w-1/2 lg:w-1/4' src={blog} alt='tapha intro' />
       <div className=' max-lg:text-center text-right lg:w-3/5'>
         <h1 className=' font-ubuntu text-3xl md:text-4xl font-bold'>Stay Informed with Tapha's Insights</h1>
