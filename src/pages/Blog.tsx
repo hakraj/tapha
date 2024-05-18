@@ -1,8 +1,9 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { NavBar, Footer } from "./Home.tsx";
 import first from '../images/first.jpg'
 
-const Intro = () => {
+const Intro = ({ navigate }) => {
   return (
     <div className=' bg-gradient-to-br via-sky-200 via-10% from-violet-300 to-15% to-neutral-50' >
       <NavBar />
@@ -24,30 +25,22 @@ const Intro = () => {
               Fusce et enim vel felis efficitur interdum.
               Cras vulputate metus imperdiet felis mollis,
               sit amet mollis dolor eleifend.
-              {/* Ut ante magna, suscipit vitae porttitor fringilla, 
-              porttitor quis lectus. 
-              Praesent lacinia, 
-              tellus congue vehicula faucibus, enim enim placerat elit, 
-              id aliquam dolor lectus nec purus. Aliquam et dignissim orci. 
-              Pellentesque finibus ligula et gravida venenatis. 
-              Pellentesque sed lectus tempus nibh condimentum aliquet. 
-              Aliquam volutpat facilisis augue, eu tempus nibh consequat ut. */}
             </p>
-            <button className=' font-ubuntu my-4 bg-gradient-to-tr from-sky-400 to-violet-500 hover:from-sky-300 hover:to-violet-400 rounded-lg py-2 px-4 max-md:text-sm text-white' >
+            <button onClick={() => navigate('/blog/first')} className=' font-ubuntu my-4 bg-gradient-to-tr from-sky-400 to-violet-500 hover:from-sky-300 hover:to-violet-400 rounded-lg py-2 px-4 max-md:text-sm text-white' >
               <span className='mr-1'>Read more</span>
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5 inline-block relative bottom-[1px]">
                 <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
               </svg>
             </button>
           </div>
-          <img className=" max-md:mt-4 md:w-2/5 rounded-xl" src={first} alt="first post" />
+          <img fetchPriority="high" className=" max-md:mt-4 md:w-2/5 rounded-xl" src={first} alt="first post" />
         </div>
       </div>
     </div>
   )
 }
 
-const Category = () => {
+const Category = ({ navigate }) => {
   return (
     <div className="px-[5vw] py-[10vh]">
       <div className="flex items-center justify-center gap-4 md:gap-8 ">
@@ -70,7 +63,7 @@ const Category = () => {
                   Cras vulputate metus imperdiet felis mollis,
                   sit amet mollis dolor eleifend.
                 </p>
-                <button className=' font-ubuntu my-4 text-violet-500  hover:text-violet-400 py-2 px-2 max-md:text-sm ' >
+                <button onClick={() => navigate('/blog/first')} className=' font-ubuntu my-4 text-violet-500  hover:text-violet-400 py-2 px-2 max-md:text-sm ' >
                   <span className='mr-1'>Read more</span>
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5 inline-block relative bottom-[1px]">
                     <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
@@ -97,11 +90,13 @@ const Category = () => {
 }
 
 const Blog = () => {
+  const navigate = useNavigate();
+
   return (
     <>
       <main className='max-w-screen-2xl mx-auto'>
-        <Intro />
-        <Category />
+        <Intro navigate={navigate} />
+        <Category navigate={navigate} />
       </main>
       <Footer />
     </>

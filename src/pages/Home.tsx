@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import phone from '../images/phone.png';
 import laptop from '../images/laptop.png';
 import intro from '../images/marketing-consulting-concept-illustration_114360-9027.avif';
@@ -102,9 +102,9 @@ export const NavBar = () => {
 
   return (
     <nav className='flex justify-between items-baseline py-4 px-[5vw]'>
-      <div>
+      <Link to="/">
         <p className='logo text-2xl font-bold font-mono' > tapha </p>
-      </div>
+      </Link>
       <div className='md:hidden' >
         {isDropdown && <Dropdown onClose={() => setIsDropdown(false)} />}
         <svg onClick={() => setIsDropdown(true)} className="cursor-pointer w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" >
@@ -198,6 +198,7 @@ const Product = () => {
 }
 
 const Features = () => {
+  const navigate = useNavigate();
 
   const features = [
     {
@@ -229,7 +230,7 @@ const Features = () => {
             <img loading='lazy' className=' max-w-full h-auto rounded-l-2xl ' src={img} alt='feature 1' />
             <h3 className=' font-ubuntu text-xl my-4 mr-4'>{title}</h3>
             <p className=' text-sm text-slate-700 pr-4'>{body}</p>
-            <button className=' font-ubuntu my-4 bg-gradient-to-tr from-sky-400 to-violet-500 hover:from-sky-300 hover:to-violet-400 rounded-lg py-2 px-4 text-white' >
+            <button onClick={() => navigate('/blog/first')} className=' font-ubuntu my-4 bg-gradient-to-tr from-sky-400 to-violet-500 hover:from-sky-300 hover:to-violet-400 rounded-lg py-2 px-4 text-white' >
               <span className='mr-1'>Read more</span>
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5 inline-block">
                 <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
@@ -243,6 +244,8 @@ const Features = () => {
 }
 
 const Blog = () => {
+  const navigate = useNavigate();
+
   return (
     <div className=' px-[5vw] py-[15vh] max-md:pt-[35vh] max-[320px]:pt-[50vh] flex flex-col lg:flex-row justify-between items-center'>
       <img loading='lazy' className='w-2/3 md:w-1/2 lg:w-1/4' src={blog} alt='tapha intro' />
@@ -252,7 +255,7 @@ const Blog = () => {
           Dig into Community Management Strategies! Discover expert insights,
           industry tips, and the latest service updates on our blog.
         </p>
-        <button className=' font-ubuntu my-4 border border-violet-500 text-violet-400 rounded-lg bg-gradient-to-tr hover:from-sky-300 hover:to-violet-400 hover:border-transparent hover:text-white py-2 px-4' >
+        <button onClick={() => navigate('/blog')} className=' font-ubuntu my-4 border border-violet-500 text-violet-400 rounded-lg bg-gradient-to-tr hover:from-sky-300 hover:to-violet-400 hover:border-transparent hover:text-white py-2 px-4' >
           Check our blog
         </button>
       </div>
